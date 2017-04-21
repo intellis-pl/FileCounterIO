@@ -1,6 +1,6 @@
 package main.java.search;
 
-import main.java.dto.DirectoryContentDTO;
+import main.java.dto.DirectoryFileCountDTO;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -9,9 +9,9 @@ import java.util.List;
 
 public class DirectoryFileCounter {
 
-    private List<DirectoryContentDTO> contentList = new ArrayList<>();
+    private List<DirectoryFileCountDTO> contentList = new ArrayList<>();
 
-    public List<DirectoryContentDTO> countFilesForDirectories(File dirContent) {
+    public List<DirectoryFileCountDTO> countFilesForDirectories(File dirContent) {
         if(dirContent.isDirectory()) {
             if(dirContent.canRead()) {
                 findAndCountDirFiles(dirContent);
@@ -41,7 +41,7 @@ public class DirectoryFileCounter {
         if(file.isDirectory()) {
             countDirFiles = findAndCountDirFiles(file);
             contentList.add(
-                    new DirectoryContentDTO(file.getName(), countDirFiles));
+                    new DirectoryFileCountDTO(file.getName(), countDirFiles));
         }
         return countDirFiles;
     }
