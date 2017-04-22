@@ -11,7 +11,7 @@ import static main.java.helpers.ResultFilesHelper.*;
 
 public class DirectoryFileCounter {
 
-    public ResultFilesDTO countFilesForDirectories(File dirContent) {
+    public ResultFilesDTO countFilesForDirectoryBranches(File dirContent) {
         ResultFilesDTO resultFiles = new ResultFilesDTO(0, new ArrayList<>());
         if(dirContent.isDirectory()) {
             if(dirContent.canRead()) {

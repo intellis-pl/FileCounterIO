@@ -16,7 +16,7 @@ public class FileCounter {
         File directoryContent = new File("./search_dir/");
 
         ResultFilesDTO fileCounterResult =
-                searcher.countFilesForDirectories(directoryContent);
+                searcher.countFilesForDirectoryBranches(directoryContent);
 
         for(DirectoryFilesAmountDTO fileCountDTO : fileCounterResult.getFilesAmountPerDirectoryBranch()) {
             LOGGER.info(fileCountDTO.getDirectoryName() + " " + fileCountDTO.getFileAmount());
