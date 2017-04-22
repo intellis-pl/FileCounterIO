@@ -1,11 +1,11 @@
 package main.java.dto;
 
 
-public class DirectoryFileCountDTO {
+public class DirectoryFilesAmountDTO {
     private String directoryName;
     private Integer fileCount;
 
-    public DirectoryFileCountDTO(String directoryName, Integer fileCount) {
+    public DirectoryFilesAmountDTO(String directoryName, Integer fileCount) {
         this.directoryName = directoryName;
         this.fileCount = fileCount;
     }

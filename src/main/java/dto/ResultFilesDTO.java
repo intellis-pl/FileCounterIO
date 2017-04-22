@@ -5,14 +5,14 @@ import java.util.List;
 public class ResultFilesDTO {
     private Integer allFilesAmount;
     private Integer currentDirFilesAmount;
-    private List<DirectoryFileCountDTO> filesAmountPerDirectoryBranch;
+    private List<DirectoryFilesAmountDTO> filesAmountPerDirectoryBranch;
 
-    public ResultFilesDTO(Integer allFilesAmount, List<DirectoryFileCountDTO> filesAmountPerDirectoryBranch) {
+    public ResultFilesDTO(Integer allFilesAmount, List<DirectoryFilesAmountDTO> filesAmountPerDirectoryBranch) {
         this.allFilesAmount = allFilesAmount;
         this.filesAmountPerDirectoryBranch = filesAmountPerDirectoryBranch;
     }
 
-    public List<DirectoryFileCountDTO> getFilesAmountPerDirectoryBranch() {
+    public List<DirectoryFilesAmountDTO> getFilesAmountPerDirectoryBranch() {
         return filesAmountPerDirectoryBranch;
     }
 
@@ -32,7 +32,7 @@ public class ResultFilesDTO {
         this.currentDirFilesAmount = currentDirFilesAmount;
     }
 
-    public void addFilesAmountForCurrentDir(DirectoryFileCountDTO fileCount) {
+    public void addFilesAmountForCurrentDir(DirectoryFilesAmountDTO fileCount) {
         filesAmountPerDirectoryBranch.add(fileCount);
     }
 }

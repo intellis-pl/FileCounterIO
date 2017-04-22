@@ -1,6 +1,6 @@
 package main.java;
 
-import main.java.dto.DirectoryFileCountDTO;
+import main.java.dto.DirectoryFilesAmountDTO;
 import main.java.dto.ResultFilesDTO;
 import main.java.search.DirectoryFileCounter;
 import org.apache.log4j.Logger;
@@ -18,7 +18,7 @@ public class FileSearcher {
         ResultFilesDTO fileCounterResult =
                 searcher.countFilesForDirectories(directoryContent);
 
-        for(DirectoryFileCountDTO fileCountDTO : fileCounterResult.getFilesAmountPerDirectoryBranch()) {
+        for(DirectoryFilesAmountDTO fileCountDTO : fileCounterResult.getFilesAmountPerDirectoryBranch()) {
             LOGGER.info(fileCountDTO.getDirectoryName() + " " + fileCountDTO.getFileCount());
         }
 

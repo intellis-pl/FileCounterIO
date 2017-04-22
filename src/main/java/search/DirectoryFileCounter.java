@@ -1,6 +1,6 @@
 package main.java.search;
 
-import main.java.dto.DirectoryFileCountDTO;
+import main.java.dto.DirectoryFilesAmountDTO;
 import main.java.dto.ResultFilesDTO;
 
 import java.io.File;
@@ -43,7 +43,7 @@ public class DirectoryFileCounter {
         if(file.isDirectory()) {
             resultFiles = findAndCountDirFiles(file, resultFiles);
             resultFiles.addFilesAmountForCurrentDir(
-                    new DirectoryFileCountDTO(file.getName(), resultFiles.getCurrentDirFilesAmount()));
+                    new DirectoryFilesAmountDTO(file.getName(), resultFiles.getCurrentDirFilesAmount()));
         }
         return resultFiles;
     }
