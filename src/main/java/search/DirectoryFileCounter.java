@@ -26,7 +26,7 @@ public class DirectoryFileCounter {
         for(File file : dirContent.listFiles()) {
             resultFiles = findAndCountSubDirFiles(file, resultFiles);
             countSubDirFiles = countFilesForCurrentDir(file, countSubDirFiles);
-            countSubDirFiles += resultFiles.getCurrentDirFilesCount();
+            countSubDirFiles += resultFiles.getCurrentDirFilesAmount();
         }
         return modifyResults(resultFiles, countSubDirFiles);
     }
@@ -39,11 +39,11 @@ public class DirectoryFileCounter {
     }
 
     private ResultFilesDTO findAndCountSubDirFiles(File file, ResultFilesDTO resultFiles) {
-        resultFiles = resetCurrentDirFiles(resultFiles);
+        resultFiles = resetCurrentDirFilesAmount(resultFiles);
         if(file.isDirectory()) {
             resultFiles = findAndCountDirFiles(file, resultFiles);
-            resultFiles.addFilesNumberForCurrentDir(
-                    new DirectoryFileCountDTO(file.getName(), resultFiles.getCurrentDirFilesCount()));
+            resultFiles.addFilesAmountForCurrentDir(
+                    new DirectoryFileCountDTO(file.getName(), resultFiles.getCurrentDirFilesAmount()));
         }
         return resultFiles;
     }

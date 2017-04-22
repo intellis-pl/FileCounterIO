@@ -6,14 +6,14 @@ import main.java.dto.ResultFilesDTO;
 public final class ResultFilesHelper {
 
     public static ResultFilesDTO modifyResults(ResultFilesDTO resultFiles, Integer countDirFiles) {
-        resultFiles.setAllFiles(countDirFiles);
-        resultFiles.setCurrentDirFilesCount(countDirFiles);
+        resultFiles.setAllFilesAmount(countDirFiles);
+        resultFiles.setCurrentDirFilesAmount(countDirFiles);
         return resultFiles;
     }
 
 
-    public static ResultFilesDTO resetCurrentDirFiles(ResultFilesDTO resultFiles) {
-        resultFiles.setCurrentDirFilesCount(0);
+    public static ResultFilesDTO resetCurrentDirFilesAmount(ResultFilesDTO resultFiles) {
+        resultFiles.setCurrentDirFilesAmount(0);
         return resultFiles;
     }
 }

@@ -28,7 +28,7 @@ public class DirectoryFileCounterTest {
                 searcher.countFilesForDirectories(directoryContent);
 
         //then
-        assertEquals(expectedResult, fileCounterResult.getAllFiles());
+        assertEquals(expectedResult, fileCounterResult.getAllFilesAmount());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class DirectoryFileCounterTest {
                 searcher.countFilesForDirectories(directoryContent);
 
         //then
-        assertEquals(expectedResult, fileCounterResult.getAllFiles());
+        assertEquals(expectedResult, fileCounterResult.getAllFilesAmount());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class DirectoryFileCounterTest {
                 searcher.countFilesForDirectories(directoryContent);
 
         //then
-        assertEquals(expectedResult, fileCounterResult.getAllFiles());
+        assertEquals(expectedResult, fileCounterResult.getAllFilesAmount());
     }
 
     @Test
@@ -70,7 +70,7 @@ public class DirectoryFileCounterTest {
                 searcher.countFilesForDirectories(directoryContent);
 
         //then
-        assertEquals(expectedResult, fileCounterResult.getAllFiles());
+        assertEquals(expectedResult, fileCounterResult.getAllFilesAmount());
     }
 
     @Test
@@ -84,7 +84,7 @@ public class DirectoryFileCounterTest {
                 searcher.countFilesForDirectories(directoryContent);
 
         //then
-        assertEquals(expectedResult, fileCounterResult.getAllFiles());
+        assertEquals(expectedResult, fileCounterResult.getAllFilesAmount());
     }
 
     @Test
@@ -98,7 +98,7 @@ public class DirectoryFileCounterTest {
                 searcher.countFilesForDirectories(directoryContent);
 
         //then
-        assertEquals(expectedResult, fileCounterResult.getAllFiles());
+        assertEquals(expectedResult, fileCounterResult.getAllFilesAmount());
     }
 
     @Test
@@ -112,7 +112,7 @@ public class DirectoryFileCounterTest {
                 searcher.countFilesForDirectories(directoryContent);
 
         //then
-        assertEquals(expectedResult, fileCounterResult.getAllFiles());
+        assertEquals(expectedResult, fileCounterResult.getAllFilesAmount());
     }
 
     @Test
@@ -126,7 +126,7 @@ public class DirectoryFileCounterTest {
                 searcher.countFilesForDirectories(directoryContent);
 
         //then
-        assertEquals(expectedResult, fileCounterResult.getAllFiles());
+        assertEquals(expectedResult, fileCounterResult.getAllFilesAmount());
     }
 
 }

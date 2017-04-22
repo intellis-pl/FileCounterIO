@@ -18,11 +18,11 @@ public class FileSearcher {
         ResultFilesDTO fileCounterResult =
                 searcher.countFilesForDirectories(directoryContent);
 
-        for(DirectoryFileCountDTO fileCountDTO : fileCounterResult.getResultFiles()) {
+        for(DirectoryFileCountDTO fileCountDTO : fileCounterResult.getFilesAmountPerDirectoryBranch()) {
             LOGGER.info(fileCountDTO.getDirectoryName() + " " + fileCountDTO.getFileCount());
         }
 
-        LOGGER.info("\nAll files: " + fileCounterResult.getAllFiles());
+        LOGGER.info("\nAll files: " + fileCounterResult.getAllFilesAmount());
 
     }
 }

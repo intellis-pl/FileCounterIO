@@ -3,36 +3,36 @@ package main.java.dto;
 import java.util.List;
 
 public class ResultFilesDTO {
-    private Integer allFiles;
-    private Integer currentDirFilesCount;
-    private List<DirectoryFileCountDTO> resultFiles;
+    private Integer allFilesAmount;
+    private Integer currentDirFilesAmount;
+    private List<DirectoryFileCountDTO> filesAmountPerDirectoryBranch;
 
-    public ResultFilesDTO(Integer allFiles, List<DirectoryFileCountDTO> resultFiles) {
-        this.allFiles = allFiles;
-        this.resultFiles = resultFiles;
+    public ResultFilesDTO(Integer allFilesAmount, List<DirectoryFileCountDTO> filesAmountPerDirectoryBranch) {
+        this.allFilesAmount = allFilesAmount;
+        this.filesAmountPerDirectoryBranch = filesAmountPerDirectoryBranch;
     }
 
-    public List<DirectoryFileCountDTO> getResultFiles() {
-        return resultFiles;
+    public List<DirectoryFileCountDTO> getFilesAmountPerDirectoryBranch() {
+        return filesAmountPerDirectoryBranch;
     }
 
-    public Integer getAllFiles() {
-        return allFiles;
+    public Integer getAllFilesAmount() {
+        return allFilesAmount;
     }
 
-    public void setAllFiles(Integer allFiles) {
-        this.allFiles = allFiles;
+    public void setAllFilesAmount(Integer allFilesAmount) {
+        this.allFilesAmount = allFilesAmount;
     }
 
-    public Integer getCurrentDirFilesCount() {
-        return currentDirFilesCount;
+    public Integer getCurrentDirFilesAmount() {
+        return currentDirFilesAmount;
     }
 
-    public void setCurrentDirFilesCount(Integer currentDirFilesCount) {
-        this.currentDirFilesCount = currentDirFilesCount;
+    public void setCurrentDirFilesAmount(Integer currentDirFilesAmount) {
+        this.currentDirFilesAmount = currentDirFilesAmount;
     }
 
-    public void addFilesNumberForCurrentDir(DirectoryFileCountDTO fileCount) {
-        resultFiles.add(fileCount);
+    public void addFilesAmountForCurrentDir(DirectoryFileCountDTO fileCount) {
+        filesAmountPerDirectoryBranch.add(fileCount);
     }
 }
