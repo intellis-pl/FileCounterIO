@@ -7,8 +7,8 @@ import org.apache.log4j.Logger;
 
 import java.io.File;
 
-public class FileSearcher {
-    private final static Logger LOGGER = Logger.getLogger(FileSearcher.class);
+public class FileCounter {
+    private final static Logger LOGGER = Logger.getLogger(FileCounter.class);
 
     public static void main(String[] args) {
 
