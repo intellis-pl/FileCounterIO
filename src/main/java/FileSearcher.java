@@ -19,7 +19,7 @@ public class FileSearcher {
                 searcher.countFilesForDirectories(directoryContent);
 
         for(DirectoryFilesAmountDTO fileCountDTO : fileCounterResult.getFilesAmountPerDirectoryBranch()) {
-            LOGGER.info(fileCountDTO.getDirectoryName() + " " + fileCountDTO.getFileCount());
+            LOGGER.info(fileCountDTO.getDirectoryName() + " " + fileCountDTO.getFileAmount());
         }
 
         LOGGER.info("\nAll files: " + fileCounterResult.getAllFilesAmount());
