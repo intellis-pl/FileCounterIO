@@ -31,13 +31,6 @@ public class DirectoryFileCounter {
         return modifyResults(resultFiles, countSubDirFiles);
     }
 
-    private Integer countFilesForCurrentDir(File file, Integer countSubDirFiles) {
-        if(file.isFile()) {
-            countSubDirFiles++;
-        }
-        return countSubDirFiles;
-    }
-
     private ResultFilesDTO findAndCountSubDirFiles(File file, ResultFilesDTO resultFiles) {
         resultFiles = resetCurrentDirFilesAmount(resultFiles);
         if(file.isDirectory()) {
@@ -46,6 +39,13 @@ public class DirectoryFileCounter {
                     new DirectoryFilesAmountDTO(file.getName(), resultFiles.getCurrentDirFilesAmount()));
         }
         return resultFiles;
+    }
+
+    private Integer countFilesForCurrentDir(File file, Integer countSubDirFiles) {
+        if(file.isFile()) {
+            countSubDirFiles++;
+        }
+        return countSubDirFiles;
     }
 
 }
