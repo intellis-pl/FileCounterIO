@@ -1,11 +1,11 @@
 package main.java;
 
 import main.java.dto.DirectoryFileCountDTO;
+import main.java.dto.ResultFilesDTO;
 import main.java.search.DirectoryFileCounter;
 import org.apache.log4j.Logger;
 
 import java.io.File;
-import java.util.List;
 
 public class FileSearcher {
     private final static Logger LOGGER = Logger.getLogger(FileSearcher.class);
@@ -15,12 +15,14 @@ public class FileSearcher {
         DirectoryFileCounter searcher = new DirectoryFileCounter();
         File directoryContent = new File("./search_dir/");
 
-        List<DirectoryFileCountDTO> fileCounterResult =
+        ResultFilesDTO fileCounterResult =
                 searcher.countFilesForDirectories(directoryContent);
 
-        for(DirectoryFileCountDTO fileCountDTO : fileCounterResult) {
+        for(DirectoryFileCountDTO fileCountDTO : fileCounterResult.getResultFiles()) {
             LOGGER.info(fileCountDTO.getDirectoryName() + " " + fileCountDTO.getFileCount());
         }
+
+        LOGGER.info("\nAll files: " + fileCounterResult.getAllFiles());
 
     }
 }

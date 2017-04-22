@@ -1,32 +1,34 @@
 package main.java.search;
 
 import main.java.dto.DirectoryFileCountDTO;
+import main.java.dto.ResultFilesDTO;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
+
+import static main.java.helpers.ResultFilesHelper.*;
 
 
 public class DirectoryFileCounter {
 
-    private List<DirectoryFileCountDTO> contentList = new ArrayList<>();
-
-    public List<DirectoryFileCountDTO> countFilesForDirectories(File dirContent) {
+    public ResultFilesDTO countFilesForDirectories(File dirContent) {
+        ResultFilesDTO resultFiles = new ResultFilesDTO(0, new ArrayList<>());
         if(dirContent.isDirectory()) {
             if(dirContent.canRead()) {
-                findAndCountDirFiles(dirContent);
+                resultFiles = findAndCountDirFiles(dirContent, resultFiles);
             }
         }
-        return contentList;
+        return resultFiles;
     }
 
-    private Integer findAndCountDirFiles(File dirContent) {
-        int countSubDirFiles = 0;
+    private ResultFilesDTO findAndCountDirFiles(File dirContent, ResultFilesDTO resultFiles) {
+        Integer countSubDirFiles = 0;
         for(File file : dirContent.listFiles()) {
+            resultFiles = findAndCountSubDirFiles(file, resultFiles);
             countSubDirFiles = countFilesForCurrentDir(file, countSubDirFiles);
-            countSubDirFiles += findAndCountSubDirFiles(file);
+            countSubDirFiles += resultFiles.getCurrentDirFilesCount();
         }
-        return countSubDirFiles;
+        return modifyResults(resultFiles, countSubDirFiles);
     }
 
     private Integer countFilesForCurrentDir(File file, Integer countSubDirFiles) {
@@ -36,14 +38,14 @@ public class DirectoryFileCounter {
         return countSubDirFiles;
     }
 
-    private Integer findAndCountSubDirFiles(File file) {
-        Integer countDirFiles = 0;
+    private ResultFilesDTO findAndCountSubDirFiles(File file, ResultFilesDTO resultFiles) {
+        resultFiles = resetCurrentDirFiles(resultFiles);
         if(file.isDirectory()) {
-            countDirFiles = findAndCountDirFiles(file);
-            contentList.add(
-                    new DirectoryFileCountDTO(file.getName(), countDirFiles));
+            resultFiles = findAndCountDirFiles(file, resultFiles);
+            resultFiles.addFilesNumberForCurrentDir(
+                    new DirectoryFileCountDTO(file.getName(), resultFiles.getCurrentDirFilesCount()));
         }
-        return countDirFiles;
+        return resultFiles;
     }
 
 }
