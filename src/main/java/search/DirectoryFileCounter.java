@@ -22,13 +22,13 @@ public class DirectoryFileCounter {
     }
 
     private ResultFilesDTO findAndCountDirFiles(File dirContent, ResultFilesDTO resultFiles) {
-        Integer countSubDirFiles = 0;
+        Integer countDirFiles = 0;
         for(File file : dirContent.listFiles()) {
             resultFiles = findAndCountSubDirFiles(file, resultFiles);
-            countSubDirFiles = countFilesForCurrentDir(file, countSubDirFiles);
-            countSubDirFiles += resultFiles.getCurrentDirFilesAmount();
+            countDirFiles = countFilesForCurrentDir(file, countDirFiles);
+            countDirFiles += resultFiles.getCurrentDirFilesAmount();
         }
-        return modifyResults(resultFiles, countSubDirFiles);
+        return modifyResults(resultFiles, countDirFiles);
     }
 
     private ResultFilesDTO findAndCountSubDirFiles(File file, ResultFilesDTO resultFiles) {
