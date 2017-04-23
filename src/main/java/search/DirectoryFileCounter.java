@@ -41,11 +41,11 @@ public class DirectoryFileCounter {
         return resultFiles;
     }
 
-    private Integer countFilesForCurrentDir(File file, Integer countSubDirFiles) {
+    private Integer countFilesForCurrentDir(File file, Integer countDirFiles) {
         if(file.isFile()) {
-            countSubDirFiles++;
+            countDirFiles++;
         }
-        return countSubDirFiles;
+        return countDirFiles;
     }
 
 }
