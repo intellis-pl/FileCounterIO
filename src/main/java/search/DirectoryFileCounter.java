@@ -2,6 +2,7 @@ package main.java.search;
 
 import main.java.dto.DirectoryFilesAmountDTO;
 import main.java.dto.ResultFilesDTO;
+import main.java.helpers.FileMatcher;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class DirectoryFileCounter {
     }
 
     private Integer countFilesForCurrentDir(File file, Integer countDirFiles) {
-        if(file.isFile()) {
+        if(file.isFile() && FileMatcher.match(file.getName())) {
             countDirFiles++;
         }
         return countDirFiles;
