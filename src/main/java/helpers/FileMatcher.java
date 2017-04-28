@@ -4,7 +4,7 @@ import main.java.enums.FileExtension;
 
 public class FileMatcher {
 
-    public static boolean match(String fileName) {
+    public static boolean matchExtension(String fileName) {
         if(findFileExtension(fileName).equals(FileExtension.XML.getExtension())) {
             return true;
         }

@@ -14,7 +14,7 @@ public class FileMatcherTest {
         String fileName = "testFile.xml";
 
         //when
-        Boolean isXml = FileMatcher.match(fileName);
+        Boolean isXml = FileMatcher.matchExtension(fileName);
 
         //then
         assertTrue(isXml);
@@ -26,7 +26,7 @@ public class FileMatcherTest {
         String fileName = "testFile.3ds";
 
         //when
-        Boolean isXml = FileMatcher.match(fileName);
+        Boolean isXml = FileMatcher.matchExtension(fileName);
 
         //then
         assertFalse(isXml);
