@@ -43,10 +43,14 @@ public class DirectoryFileCounter {
     }
 
     private Integer countFilesForCurrentDir(File file, Integer countDirFiles) {
-        if(file.isFile() && FileMatcher.matchExtension(file.getName())) {
+        if(isValidExtensionFile(file)) {
             countDirFiles++;
         }
         return countDirFiles;
+    }
+
+    private boolean isValidExtensionFile(File file) {
+        return file.isFile() && FileMatcher.matchExtension(file.getName());
     }
 
 }
